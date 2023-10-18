@@ -1,0 +1,31 @@
+
+
+<div class="container">
+
+    <h2 class="text-center">Listado de Alumnos</h2><br>
+
+    <button type="button" class="btn btn-primary" (click)="nuevoAlumno()">Nuevo Alumno</button> <br><br>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alumno of  alumnos" (click)="editarAlumno(alumno.id)">
+            <th scope="row">{{alumno.id}}</th>
+            <td>{{alumno.nombre}}</td>
+            <td>{{alumno.fechaNacimiento}}</td>
+          </tr>
+          
+          
+        </tbody>
+    </table>
+
+</div>
+
+<app-footer></app-footer>

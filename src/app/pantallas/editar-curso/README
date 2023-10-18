@@ -1,0 +1,5 @@
+EDITAR CURSO PUEDE EDITAR Y GUARDAR PERO NO MODIFICA EN LA BASE DE DATOS
+TIRA ERROR 500 500 (Internal Server Error)
+
+-------------------------------------------------------------------------
+NO SE PUEDEN BORRAR LOS CURSOS YA QUE NO EXISTE UN METODO DELETE EN LA BASE DE DATOS
