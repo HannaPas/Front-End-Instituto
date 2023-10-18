@@ -1,0 +1,64 @@
+<app-header> </app-header>
+<br>
+<div class="container">
+
+    <h2 class="text-center">Editar Curso </h2> <br> <br>
+
+
+    <form [formGroup]="editarForm" (ngSubmit) = "postForm(editarForm.value)">
+        
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group mt-3">
+                        <label for="title">Id Curso</label>
+                        <input type="number" class="form-control" id="idcurso" formControlName="id" name="id" requiered
+                            placeholder="Ingrese Aquí">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group mt-3">
+                        <label for="title">Nombre del Curso</label>
+                        <input type="text" class="form-control" id="title" formControlName="nombre" name="title"
+                            requiered placeholder="Curso....">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6 mt-3">
+
+                    <label for="Tematica">Seleccionar Tema:</label>
+                    <select type="tema" class="form-control" id="tema-select" formControlName="tema">
+                        <option *ngFor="let tema of temas" [value]="tema.nombre" [selected]="datosCurso?.tema?.nombre === tema.nombre">{{tema.nombre}}</option>
+                    </select>
+                    
+                  
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="title">ID Docente</label>
+                    <input type="number" class="form-control" id="idDocente" formControlName="idDocente" name="idDocente">
+                </div>
+                
+            </div>
+
+            <div class="form-group col-md-6 mt-3">
+                <label for="fechaInicio">Fecha de Inicio:</label>
+                <input type="datetime-local" class="form-control" id="fechaInicio" formControlName="fechaInicio" min= minDate>
+           </div>
+
+
+            <br> <br>
+            <button type="submit" class="btn btn-success mb-5"> Guardar </button>
+            <!--<button type="submit" class="btn btn-danger" (click)="eliminar()"> Eliminar </button>-->
+            <button type="submit" class="btn btn-secondary ms-2 mb-5" (click)="salir()"> Volver </button>
+            
+           
+    </form>
+
+</div>
+
+

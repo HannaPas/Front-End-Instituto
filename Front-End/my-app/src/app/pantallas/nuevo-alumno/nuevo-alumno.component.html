@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container">
+    <h2 class="text-center">Agregar Alumno </h2> <br> <br>
+
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mt-3">
+                        <label for="title">Id Alumno</label>
+                        <input type="text" class="form-control" id="title" required [(ngModel)]="alumno.id" name="title" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mt-3">
+                        <label for="title">Nombre del Alumno</label>
+                        <input type="text" class="form-control" id="title" required [(ngModel)]="alumno.nombre" name="title" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt -3">
+                <label for="fechaInicio">Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" id="fechaInicio" requiered [(ngModel)]="alumno.fechaNacimiento">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <button (click)="saveAlumno()" class="btn btn-success">Agregar</button>
+        <button type="submit" class="btn btn-secondary ms-2" (click)="salir()"> Volver </button>
+    </div>
+    <div *ngIf="submitted"><br>
+        <h4>Alumno Agregado Correctamente!</h4>
+    </div>
+</div>

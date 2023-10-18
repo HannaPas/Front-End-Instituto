@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <h2 class="text-center">Listado de Temas</h2><br>
+
+    <button type="button" class="btn btn-primary" (click)="nuevoTema()">Nuevo Tema</button> <br><br>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Duración</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tema of  temas" (click)="editarTema(tema.id)">
+            <th scope="row">{{tema.id}}</th>
+            <td>{{tema.nombre}}</td>
+            <td>{{tema.duracion}}</td>
+          </tr>
+          
+          
+        </tbody>
+    </table>
+
+</div>
+
+<app-footer></app-footer>

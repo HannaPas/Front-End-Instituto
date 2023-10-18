@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+    <h2 class="text-center">Listado de Cursos</h2><br>
+    <button type="button" class="btn btn-primary" (click)="AgregarCurso()">Agregar Curso</button> <br><br>
+
+    <div class="row">
+        <div class="col-md-4 mb-5" *ngFor="let curso of cursos; let i = index" 
+             (click)="EditarCurso(curso.id)">
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/curso.png" class="card-img-top" alt="imagen de tarjeta">
+                <div class="card-body"> 
+                    <h2 class="card-title text-center">{{ curso.nombre }}</h2>
+                    <p class="card-text">
+                        FechaDeInicio: {{ curso.fechaInicio}}
+                        IdDocente: {{ curso.idDocente}} <br>
+                        IdCurso: {{ curso.id }}
+                    </p>
+                </div>
+                    <ol *ngIf="curso.tema" >
+                        <h4 class="card-text-tema">Tema: {{ curso.tema.nombre }}</h4>
+                    </ol>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
