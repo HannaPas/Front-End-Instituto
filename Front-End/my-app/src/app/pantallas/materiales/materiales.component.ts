@@ -13,6 +13,8 @@ export class MaterialesComponent implements OnInit {
 
   
   materiales?: listaMateriales[];
+  terminoBusqueda: string = '';
+  tipoBusqueda: string = 'nombre';
 
    constructor(private api:MaterialService, private router:Router) {}
 
@@ -32,5 +34,23 @@ export class MaterialesComponent implements OnInit {
     this.router.navigate(['nuevoMaterial']);
   }
 
-  
+
+  buscarMaterial(): void {
+    if (this.terminoBusqueda.trim() === '') {
+      // Obtener todos los materiales si el término de búsqueda está vacío
+      this.api.getAllMateriales().subscribe(data => {
+        this.materiales = data;
+      });
+    } else if (this.tipoBusqueda === 'nombre') {
+      // Buscar materiales por nombre
+      this.api.getMaterialesPorNombre(this.terminoBusqueda).subscribe(data => {
+        this.materiales = data;
+      });
+    } else if (this.tipoBusqueda === 'curso') {
+      // Buscar materiales por ID de curso
+      this.api.getMaterialesPorCursoId(this.terminoBusqueda).subscribe(data => {
+        this.materiales = data;
+      });
+    }
+  }
 }

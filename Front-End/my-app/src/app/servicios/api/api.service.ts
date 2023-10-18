@@ -14,7 +14,7 @@ import { ResponseI } from "src/app/modelos/response.interface";
 
 export class ApiService{
   
-    url:string = "http://localhost:4200/api/cursos";
+    url:string = 'http://localhost:8080/cursos';
 
     httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -76,7 +76,7 @@ export class ApiService{
       }
 
       saveTema(tema: Tema): Observable<Tema> {
-        let direccion = "http://localhost:4200/api/temas"
+        let direccion = 'http://localhost:8080/temas';
         return this.http.post<Tema>(direccion, tema, this.httpOptions)
           .pipe(
             catchError(this.handleError)
@@ -107,7 +107,7 @@ export class ApiService{
         }
 
         getTemas(): Observable<Tema[]> {
-          let direccion = "http://localhost:4200/api/temas"
+          let direccion = 'http://localhost:8080/temas';
           return this.http.get<Tema[]>(direccion);
         }
 

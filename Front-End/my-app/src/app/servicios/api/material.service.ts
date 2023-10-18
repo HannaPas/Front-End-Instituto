@@ -9,7 +9,7 @@ import { Material } from 'src/app/modelos/material.interfase';
 })
 export class MaterialService{
 
-  url: string = "http://localhost:4200/api/materiales";
+  url: string = 'http://localhost:8080/materiales';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -75,5 +75,16 @@ export class MaterialService{
       //formData.append('status', <string>data.status);
       //formData.append('content', <string>data.content);
       return this.http.post(`${this.url}`, data, { responseType: 'text' });
+    }
+
+
+    getMaterialesPorNombre(nombre: string): Observable<listaMateriales[]> {
+      const url = `${this.url}/titulo/${nombre}`;
+      return this.http.get<listaMateriales[]>(url);
+    }
+
+    getMaterialesPorCursoId(id: string): Observable<listaMateriales[]> {
+      const url = `${this.url}/curso/${id}`;
+      return this.http.get<listaMateriales[]>(url);
     }
 }

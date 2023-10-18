@@ -4,7 +4,30 @@
 
     <h2 class="text-center">Listado de Materiales</h2><br>
 
-    <button type="button" class="btn btn-primary" (click)="nuevoMaterial()">Nuevo Material</button> <br><br>
+    <div class="header-container"> 
+      <button type="btn-nuevo-material" class="btn btn-primary" (click)="nuevoMaterial()">Nuevo Material</button> <br><br>
+    
+      <div class="busqueda-container">
+  
+        <div class="filtro">
+            <select class="seleccionar ms-2" [(ngModel)]="tipoBusqueda">
+                <option value="nombre">Por Nombre</option>
+                <option value="curso">Por ID de Curso</option>
+            </select>
+        </div>
+    
+        <div class="input-y-boton">
+            <input type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar material">
+            <button class="btn-buscar" (click)="buscarMaterial()">Buscar</button>
+        </div>
+    </div>
+
+   
+  
+  </div>
+  
+    
+  <br><br>
 
     <table class="table">
         <thead>

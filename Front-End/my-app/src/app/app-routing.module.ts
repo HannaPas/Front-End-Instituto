@@ -18,6 +18,7 @@ import { EditarMaterialComponent } from './pantallas/editar-material/editar-mate
 import { NuevoMaterialComponent } from './pantallas/nuevo-material/nuevo-material.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {path: 'dashboard', component:DashboardComponent},
   {path: 'nuevo', component:NuevoCursoComponent},
   {path: 'editar/:id', component:EditarCursoComponent},

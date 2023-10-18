@@ -11,6 +11,7 @@ import {listaTemas} from '../../modelos/listatemas.interface';
 export class TemasComponent implements OnInit {
 
   temas?: listaTemas[];
+  terminoBusqueda: string = '';
 
    constructor(private api:TemaService, private router:Router) {}
 
@@ -30,6 +31,18 @@ export class TemasComponent implements OnInit {
     this.router.navigate(['nuevoTema']);
   }
 
+  buscarTema(): void {
+    if (this.terminoBusqueda.trim() === '') {
+      // Obtener todos los temas si el término de búsqueda está vacío
+      this.api.getAllTemas();
+    } else {
+      // Buscar tema por nombre
+      this.api.getTemaPorNombre(this.terminoBusqueda).subscribe(data => {
+        this.temas = data;
+      });
+    }
+  }
+ 
 }
 
 

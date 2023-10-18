@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 
 export class AlumnoService{
   
-    url:string = "http://localhost:4200/api/alumnos";
+    url:string = 'http://localhost:8080/alumnos';
 
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })

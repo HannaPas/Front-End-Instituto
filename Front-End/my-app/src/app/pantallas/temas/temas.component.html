@@ -2,9 +2,27 @@
 
 <div class="container">
 
-    <h2 class="text-center">Listado de Temas</h2><br>
 
-    <button type="button" class="btn btn-primary" (click)="nuevoTema()">Nuevo Tema</button> <br><br>
+  <h2 class="text-center">Listado de Temas</h2><br>
+  <div class="header-container">
+
+    
+
+    <button class="btn-nuevo">Nuevo Tema</button>
+
+    <div class="busqueda-container">
+        <div class="filtro">
+            <input type="text" class="input-busqueda" [(ngModel)]="terminoBusqueda" placeholder="Buscar tema">
+        </div>
+        <button class="btn-buscar" (click)="buscarTema()">Buscar</button>
+    </div>
+
+</div>
+    
+
+<br><br>
+
+
 
     <table class="table">
         <thead>
