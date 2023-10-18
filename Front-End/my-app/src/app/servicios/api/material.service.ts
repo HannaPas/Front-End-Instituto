@@ -9,7 +9,11 @@ import { Material } from 'src/app/modelos/material.interfase';
 })
 export class MaterialService{
 
+<<<<<<< HEAD
   url: string = 'http://localhost:8080/materiales';
+=======
+  url: string = "http://localhost:8080/materiales";
+>>>>>>> afccbc647b690ac5a444b1001b363fac63b004c5
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

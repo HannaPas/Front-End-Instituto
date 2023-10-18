@@ -9,7 +9,11 @@ import { Tema } from 'src/app/modelos/tema.model';
 })
 export class TemaService {
 
+<<<<<<< HEAD
   url: string = 'http://localhost:8080/temas';
+=======
+  url: string = "http://localhost:8080/temas";
+>>>>>>> afccbc647b690ac5a444b1001b363fac63b004c5
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
